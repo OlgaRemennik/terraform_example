@@ -1,0 +1,11 @@
+#!/bin/bash
+
+apt-add-repository ppa:ansible/ansible
+apt-get update
+apt-get install -y ansible unzip
+
+echo ${archive_base64} | base64 -d > /tmp/archive.zip
+
+mkdir -p /opt/roles/
+unzip /tmp/archive.zip -d /opt/roles/${role}
+

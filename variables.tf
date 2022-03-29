@@ -27,3 +27,8 @@ variable "ssh_key" {
   type    = string
   default = "ssh-rsa AAAAB3NzaC1yc2EAAAADAQABAAABgQDqXC4AcJXlO43iE4jsSu5xIxjsLnQj/cOALTpITvaVboi9BvSQGLT+y0WGdJHfZ/2SQUiIYVTg0a97rBk7ImZ4u7LhagaXwW+mWcOpidKhgbKST482JW2IWLINpUZOyr5LrIKvHBjfI3j/oPvx2n/X7tNgn2EbT3d9Ovqj+miBCrRkZUzTbhN7pp5aD2nZlhGw24yNEkAn7tjufqnWFv8iXGyWiHEwfrfcUseQIKk4YhZkOOTVJ0sRon0GnWGn5lj61BCIyAOk+O+/9WLmnu509ZNwD3wLu/CQTWcoxCeXHnOZTCUXPkTYIlIiWOwqZNNZO7mdXwiPQYpQN7MUmMJnBOwyQ0Muo0SoIsQpJ9iu4sKV+ybhk8Z1ccK/1TFQ1LTsQp86nuP/3tb8ofgsVY1mXhRddCvfwpi3si1TbMveep6w+bOPdbZza6lyLhaj7i9sh1BCjf/Ut2FXOEKbT84rRTlOXXJYdvvxMDgwlyUGJwYDk8T+V7VcshDvqceGjoc="
 }
+
+variable "ansible_roles" {
+  type    = string
+  default = "roles"
+}
