@@ -18,6 +18,16 @@ variable "lb_private_ip" {
   default = "192.168.0.11"
 }
 
+variable "web_private_ip" {
+  type    = string
+  default = "192.168.0.12"
+}
+
+variable "db_private_ip" {
+  type    = string
+  default = "192.168.0.13"
+}
+
 variable "instance_type" {
   type    = string
   default = "t2.micro"
