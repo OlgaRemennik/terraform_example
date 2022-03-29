@@ -1,4 +1,4 @@
-#!/bin/bash
+#!/bin/bash -xe
 
 apt-add-repository ppa:ansible/ansible
 apt-get update
@@ -9,3 +9,5 @@ echo ${archive_base64} | base64 -d > /tmp/archive.zip
 mkdir -p /opt/roles/
 unzip /tmp/archive.zip -d /opt/roles/${role}
 
+cd /opt/roles
+ansible localhost -m include_role -a name=nginx_lb --extra-vars '${ansible_options}'

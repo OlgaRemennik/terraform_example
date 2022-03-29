@@ -9,5 +9,10 @@ data "template_file" "nginx_lb_init" {
   vars = {
     role           = "nginx_lb"
     archive_base64 = filebase64(data.archive_file.nginx_lb.output_path)
+    ansible_options = jsonencode({
+        app_name = "olya"
+        web_servers = ["192.168.0.12"]
+        web_server_port = 80
+    })
   }
 }
