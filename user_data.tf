@@ -10,9 +10,9 @@ data "template_file" "nginx_lb_init" {
     role           = "nginx_lb"
     archive_base64 = filebase64(data.archive_file.nginx_lb.output_path)
     ansible_options = jsonencode({
-      app_name        = "olya"
+      app_name        = var.app_name
       web_servers     = [var.web_private_ip]
-      web_server_port = 80
+      web_server_port = 8080
     })
   }
 }
@@ -29,7 +29,7 @@ data "template_file" "tomcat_init" {
     role           = "tomcat"
     archive_base64 = filebase64(data.archive_file.tomcat.output_path)
     ansible_options = jsonencode({
-      app_name   = "olya"
+      app_name   = var.app_name
       db_servers = [var.db_private_ip]
     })
   }

@@ -67,27 +67,28 @@ resource "aws_security_group" "group" {
     cidr_blocks = ["0.0.0.0/0"]
   }
 
-  # FIXME allow from workstation only
+  # Allow from the workstation to all the servers on port 22
   ingress {
     from_port   = 22
     to_port     = 22
     protocol    = "tcp"
-    cidr_blocks = ["0.0.0.0/0"]
+    cidr_blocks = [var.workstation_ip]
   }
 
-  # FIXME allow from LB only
+  # Allow from the workstation to the LB server on port 80
   ingress {
     from_port   = 80
     to_port     = 80
     protocol    = "tcp"
-    cidr_blocks = ["0.0.0.0/0"]
+    cidr_blocks = [var.workstation_ip]
   }
 
   # 2c4
+  # allow internal communication
   ingress {
     description = "value"
     from_port   = 0
-    to_port     = 0
+    to_port     = 65535
     protocol    = "TCP"
     self        = true
   }

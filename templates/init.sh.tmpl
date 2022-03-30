@@ -10,4 +10,4 @@ mkdir -p /opt/roles/
 unzip /tmp/archive.zip -d /opt/roles/${role}
 
 cd /opt/roles
-ansible localhost -m include_role -a name=nginx_lb --extra-vars '${ansible_options}'
+ansible localhost -m include_role -a name=${role} --extra-vars '${ansible_options}'

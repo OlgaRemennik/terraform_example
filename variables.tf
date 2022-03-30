@@ -42,3 +42,13 @@ variable "ansible_roles" {
   type    = string
   default = "roles"
 }
+
+variable "app_name" {
+  type    = string
+  default = "Test"
+}
+
+variable "workstation_ip" {
+  type = string
+  default = "13.49.72.129/32"
+}
